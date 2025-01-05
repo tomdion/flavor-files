@@ -14,3 +14,5 @@ function Recipe({ recipe, onDelete }) {
     </div>
   );
 }
+
+export default Recipe
