@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../api";
+import Recipe from "../components/Recipe";
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -57,6 +58,9 @@ function Home() {
     <div>
       <div>
         <h2>Recipes</h2>
+        {recipes.map((recipe) => (
+          <Recipe recipe={recipe} onDelete={deleteRecipe} key={recipe.id} />
+        ))}
       </div>
       <h2>Add a Recipe</h2>
       <form onSubmit={createRecipe}>
