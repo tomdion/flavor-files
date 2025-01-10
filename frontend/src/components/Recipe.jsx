@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Recipe.css"
 
 function Recipe({ recipe, onDelete }) {
   const formattedDate = new Date(recipe.created_at).toLocaleDateString("en-US");

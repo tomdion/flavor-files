@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../api";
 import Recipe from "../components/Recipe";
+import "../styles/Home.css"
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -62,9 +63,9 @@ function Home() {
           <Recipe recipe={recipe} onDelete={deleteRecipe} key={recipe.id} />
         ))}
       </div>
-      <h2>Add a Recipe</h2>
+      <h2>Add a New Recipe</h2>
       <form onSubmit={createRecipe}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Recipe Name:</label>
         <br />
         <input
           type="text"
@@ -74,7 +75,7 @@ function Home() {
           onChange={(e) => setName(e.target.value)}
           value={name}
         />
-        <label htmlFor="url">Recipe URLs:</label>
+        <label htmlFor="url">Recipe URL:</label>
         <br />
         <textarea
           id="url"
